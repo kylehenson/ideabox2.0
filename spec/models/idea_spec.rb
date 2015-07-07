@@ -12,4 +12,26 @@ RSpec.describe Idea, type: :model do
 
     expect(idea.quality).to eq "swill"
   end
+
+  it "changes the quality of an idea by adding to the quality index number" do
+    idea = Idea.create!(title: "It is getting better", body: "Soon")
+    expect(idea.quality).to eq "swill"
+
+    idea.thumbs_up
+    expect(idea.quality).to eq "plausible"
+
+    idea.thumbs_up
+    expect(idea.quality).to eq "genius"
+  end
+
+  it "changes the quality of an idea by subtracting from the quality index number" do
+    idea = Idea.create!(title: "It is getting better", body: "Soon", quality: "genius")
+    expect(idea.quality).to eq "genius"
+
+    idea.thumbs_down
+    expect(idea.quality).to eq "plausible"
+
+    idea.thumbs_down
+    expect(idea.quality).to eq "swill"
+  end
 end
