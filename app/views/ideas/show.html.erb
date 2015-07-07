@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="center">A Box for Your Best Ideas</h2>
+
+    <div id="search-box">
+      <%= form_tag("/results", method: "get", remote: true, id: "search") do %>
+        <div class="col s6">
+          <%= label_tag(:idea, "eat peeps", class: 'idea-label' ) %>
+          <%= text_field_tag(:idea, nil, class: "idea-input") %>
+        </div>
+        <div class="col s3">
+          <%= submit_tag("Search", id: "search_button", class: "btn blue-grey idea-search") %>
+        </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col s5">
+        Create an idea
+      </div>
+      <div class="col s4">
+        Idea List
+      </div>
+    </div>
+</div>
