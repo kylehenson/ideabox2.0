@@ -1,6 +1,5 @@
 <div class="container">
   <h2 class="center">A Box for Your Best Ideas</h2>
-
     <div id="search-box">
       <%= form_tag("/results", method: "get", remote: true, id: "search") do %>
         <div class="col s6">
@@ -8,16 +7,26 @@
           <%= text_field_tag(:idea, nil, class: "idea-input") %>
         </div>
         <div class="col s3">
-          <%= submit_tag("Search", id: "search_button", class: "btn blue-grey idea-search") %>
-        </div>
+          <%= submit_tag("Search", id: "search_button", class: "btn cyan") %>
+        </div><br><br>
       <% end %>
     </div>
     <div class="row">
       <div class="col s5">
-        Create an idea
+        <h3>Create an idea</h3>
+        <div class="input-field">
+          <input placeholder="Title" id="title" type="text" class="validate">
+          <input placeholder="Body" id="body" type="text" class="validate">
+          <%= submit_tag("Create Idea", id: "create_button", class: "btn cyan") %>
+        </div>
+        <!-- <%= label_tag :title %>
+        <%= text_field_tag 'title', nil, id: 'title' %>
+        <%= label_tag :body %>
+        <%= text_field_tag 'body', nil, id: 'body' %> -->
       </div>
       <div class="col s4">
-        Idea List
+        <h3>Ideas List</h3>
+        <div id="ideas-list"></div>
       </div>
     </div>
 </div>
