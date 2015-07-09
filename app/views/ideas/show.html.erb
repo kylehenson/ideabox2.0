@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="container">
   <h2 class="center">A Box for Your Best Ideas</h2>
     <div id="search-box">
@@ -19,14 +20,10 @@
           <input placeholder="Body" id="body" type="text" class="validate">
           <%= submit_tag("Create Idea", id: "create_button", class: "btn cyan") %>
         </div>
-        <!-- <%= label_tag :title %>
-        <%= text_field_tag 'title', nil, id: 'title' %>
-        <%= label_tag :body %>
-        <%= text_field_tag 'body', nil, id: 'body' %> -->
       </div>
       <div class="col s4">
-        <h3>Ideas List</h3>
-        <div id="ideas-list"></div>
+        <h3 class="center">Ideas List</h3>
+        <div id="ideas"></div>
       </div>
     </div>
 </div>
